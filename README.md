@@ -1,3 +1,6 @@
+# Demo
+[Live site](https://pokedex-f67b3.web.app/pokemon)
+
 # NgPokedex
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.

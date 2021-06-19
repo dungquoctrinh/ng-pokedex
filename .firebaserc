@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "ng-pokedex"
+  },
+  "targets": {
+    "pokedex-f67b3": {
+      "hosting": {
+        "ng-pokedex": [
+          "pokedex-f67b3"
+        ]
+      }
+    }
   }
 }
