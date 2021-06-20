@@ -1,6 +1,9 @@
 <ngx-modal [visible]="true" (visibleChange)="close($event)">
   <div bp="grid" #view *ngIf="pokemon | async; let pokemon">
-    <i bp="5@sm 4@md" [class]="'sprite sprite-' + pokemon.id"></i>
+    <!-- <i bp="5@sm 4@md" [class]="'sprite sprite-' + pokemon.id"></i> -->
+    <img *ngIf="pokemon.id < 100" src="../../../assets/images/thumbnails/00{{pokemon.id}}.png" alt={{pokemon.name}}>
+    <img *ngIf="pokemon.id >= 10 && pokemon.id < 100" src="../../../assets/images/thumbnails/0{{pokemon.id}}.png" alt={{pokemon.name}}>
+		<img *ngIf="pokemon.id >= 100" src="../../../assets/images/thumbnails/{{pokemon.id}}.png" alt={{pokemon.name}}>
     <div bp="7@sm 8@md">
       <h1>{{pokemon.name}} #{{pokemon.id}}</h1>
       <div *ngFor="let type of pokemon.types" class="type" [ngClass]="type">

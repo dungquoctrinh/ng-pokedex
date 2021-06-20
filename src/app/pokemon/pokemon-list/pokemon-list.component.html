@@ -4,7 +4,10 @@
 
 <div bp="grid 6 4@md 2@lg">
 	<a *ngFor="let p of pokemon | async" [routerLink]="['./', p.id]" class="card--media">
-		<i [class]="' sprite sprite-' + p.id"></i>
+		<!-- <i [class]="' sprite sprite-' + p.id"></i> -->
+		<img *ngIf="p.id < 10" src="../../../assets/images/thumbnails/00{{p.id}}.png" alt={{p.name}}>
+		<img *ngIf="p.id >= 10 && p.id < 100" src="../../../assets/images/thumbnails/0{{p.id}}.png" alt={{p.name}}>
+		<img *ngIf="p.id >= 100" src="../../../assets/images/thumbnails/{{p.id}}.png" alt={{p.name}}>
 		<div class="card--media__content">
 			{{p.name}}
 			<span bp="float-right">#{{p.id}}</span>
